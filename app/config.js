@@ -1,6 +1,6 @@
 let config = {}
 config.db = {}
 
-config.port = process.env.port || 80;
+config.port = process.env.port || 8080;
 
 module.exports = config;
