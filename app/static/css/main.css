@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body{
+    background-color: antiquewhite;
+}
+h1{
+    text-align: center;
+}
