@@ -4,9 +4,39 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="static/css/normalize.css">
         <link rel="stylesheet" href="static/css/main.css">
+        <link rel="stylesheet" href="static/css/header.css">
+        <link rel="stylesheet" href="static/css/footer.css">
     </head>
     <body>
     <%- include("../parts/header") %>
-    <%- include("../parts/footer") %>
+        <div class="global">
+            <aside class="catalog_name">Каталог гречки</aside>
+            <aside class="catalog1">
+
+                <div>
+                    <input type="checkbox" name="check_weight1"
+                    >
+                    <label for="check_weight1">100 g</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="check_weight2"
+                    >
+                    <label for="check_weight2">250 g</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="check_weight3">
+                    <label for="check_weight3">500 g</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="check_weight4"
+                    >
+                    <label for="check_weight4">1000 g</label>
+                </div>
+
+
+            </aside>
+
+        </div>
+        <%- include("../parts/footer") %>
     </body>
 </html>

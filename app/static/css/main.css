@@ -11,3 +11,30 @@ body{
 h1{
     text-align: center;
 }
+
+.global{
+    margin-left:15%
+}
+.catalog{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 1%;
+    width: 12%;
+    float: left;
+    height: 15%;
+}
+.catalog_name{
+    display: inline-block;
+    width:15%;
+    padding-left:1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    color: #F8F5F2;
+    background: #E52327;
+}
