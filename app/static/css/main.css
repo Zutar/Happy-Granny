@@ -18,6 +18,22 @@ h1{
 .catalog{
     display: flex;
     justify-content: space-between;
+    flex-flow: wrap column;
+    float: left;
+}
+
+.catalog1{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 1%;
+    width: 12%;
+    float: left;
+    height: 15%;
+}
+.catalog2{
+    display: flex;
+    justify-content: space-between;
     flex-direction: column;
     margin: 1%;
     width: 12%;
