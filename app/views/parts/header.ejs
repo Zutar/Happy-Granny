@@ -1,42 +1,5 @@
 <header>
     <nav>
-        <ul class="top-menu">
-            <li class="logo">
-                <a href="/"><b>S</b>PORT<b>W</b>AY</a>
-            </li>
-            <% if(data[0].user_name){ %>
-                <li>
-                    <a href="/trainer/search">Найти тренера</a>
-                </li>
-                <li>
-                    <a href="/workout/list">Мои тренировки</a>
-                </li>
-                <li>
-                    <a>Ввести данные</a>
-                </li>
-            <%}else{%>
-                <li>
-                    <a>Добавить тренировку</a>
-                </li>
-                <li>
-                    <a href="/workout/list">Мои тренировки</a>
-                </li>
-                <li>
-                    <a>Программы тренировок</a>
-                </li>
-            <% } %>
-            <li> 
-                <a><% 
-                    if(data[0].user_name){ %>
-                        <%=data[0].user_name %>
-                    <%}else{%>
-                        <%=data[0].traineer_name %>
-                    <% } %>
-                </a>
-            </li>
-            <li>
-                <a href="/logout"><span>Выйти из<br> кабинета</span></a>
-            </li>
-        </ul>
+
     </nav>
 </header>
