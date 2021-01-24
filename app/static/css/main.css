@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: antiquewhite;
+    background-color: #f6f6f6;
 }
 h1{
     text-align: center;
@@ -17,31 +17,34 @@ h1{
 }
 .catalog{
     display: flex;
-    justify-content: space-between;
-    flex-flow: wrap column;
-    float: left;
+    padding: 10px;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 12%;
+    margin-top: 10px;
 }
 
-.catalog1{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    margin: 1%;
-    width: 12%;
-    float: left;
-    height: 15%;
-}
-.catalog2{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    margin: 1%;
-    width: 12%;
-    float: left;
-    height: 15%;
-}
+/*.catalog1{*/
+/*    display: flex;*/
+/*    padding: 10px;*/
+/*    justify-content: space-between;*/
+/*    flex-direction: column;*/
+/*    border: 1px solid rgba(0, 0, 0, 0.1);*/
+/*    margin: 1%;*/
+/*    width: 12%;*/
+/*    height: 15%;*/
+/*}*/
+/*.catalog2{*/
+/*    display: flex;*/
+/*    padding: 10px;*/
+/*    justify-content: space-around;*/
+/*    flex-direction: column;*/
+/*    border: 1px solid rgba(0, 0, 0, 0.1);*/
+/*    margin: 1%;*/
+/*    width: 12%;*/
+/*    height: 15%;*/
+/*}*/
 .catalog_name{
-    display: inline-block;
     width:15%;
     padding:1%;
     margin-top: 1%;
@@ -51,4 +54,19 @@ h1{
     font-weight: bold;
     color: #F8F5F2;
     background: #E52327;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.category_name{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    padding-bottom: 4px;
+    text-decoration-line: underline;
+
+    color: #E52327;
+}
+.check_label{
+    padding:4px;
 }
