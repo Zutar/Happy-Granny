@@ -11,10 +11,15 @@
 
 ## Использованные технологии
 -Облачный сервис Heroku
--Docker для удобного развёртывания на сервере 
+
+-Docker для удобного развёртывания на сервере
+ 
 -HTML(bootstrap 5)/CSS/JS в качестве Front-End
+
 -Сontinuous delivery and deployment
+
 -Node JS(Express) и PostgreSQL в качестве Back-End
+
 -Шаблонизатор EJS
 
 !!База данных находится на Heroku
