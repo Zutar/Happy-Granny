@@ -93,3 +93,56 @@
     padding: 1rem;
 }
 /* END: FIRST SORT weight */
+
+
+.grid-wrpper {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1rem;
+    grid-row-gap: 2rem;
+
+}
+
+.grid-wrpper > div > :nth-child(2) {
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.grid-wrpper > div > .cost > .hrn {
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-bottom: 0;
+    color:red;
+    font-weight: bold;
+}
+
+.grid-wrpper > div > .cost > .coin {
+    font-size: .8rem;
+    line-height: 1.3rem;
+    margin-bottom: 0;
+    color:red;
+    font-weight: bold;
+}
+
+.grid-wrpper > div > .cost > .weight {
+    font-size: .8rem;
+    line-height: 2rem;
+    margin-bottom: 0;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+footer {
+    background-color: #E52327;
+    height: 4rem;
+}
+
+footer > .container > .row {
+    height: 4rem;
+}
+
+footer > .container > .row > p {
+    line-height: 4rem;
+}
