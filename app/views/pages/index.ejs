@@ -1,13 +1,94 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hello World</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="static/css/normalize.css">
         <link rel="stylesheet" href="static/css/main.css">
+        <link rel="stylesheet" href="static/css/header.css">
+        <link rel="stylesheet" href="static/css/footer.css">
     </head>
     <body>
-        <%- include('../parts/header') %>
-        <h1>Hello World</h1>
+    <%- include("../parts/header") %>
+        <div class="global">
+
+            <aside class="catalog_name">Каталог гречки</aside>
+
+                <aside class="catalog">
+
+                    <p class="category_name">Вес</p>
+
+                        <label class="check_label">
+                            <input type="checkbox" name="check_weight1"> 100 g
+                        </label>
+
+                        <label class="check_label">
+                            <input type="checkbox" name="check_weight2"> 250 g
+                        </label>
+
+                        <label class="check_label">
+                            <input type="checkbox" name="check_weight3"> 500 g
+                        </label>
+
+                        <label class="check_label">
+                            <input type="checkbox" name="check_weight4"> 1000 g
+                        </label>
+
+                </aside>
+
+                <aside class="catalog">
+
+                    <p class="category_name">Цена</p>
+
+                        <label class="check_label">
+                            <input type="checkbox" name="check_price1"> 100 g
+                        </label>
+
+
+                        <label class="check_label">
+                            <input type="checkbox" name="check_price2"> 250 g
+                        </label>
+
+
+                        <label class="check_label">
+                            <input type="checkbox" name="check_price3"> 500 g
+                        </label>
+
+                        <label class="check_label">
+                            <input type="checkbox" name="check_price4"> 1000 g
+                        </label>
+
+                </aside>
+
+            <aside class="catalog">
+
+                <p class="category_name">Производитель</p>
+
+                    <label class="check_label">
+                        <input type="checkbox" name="check_manufacturer1"> 100 g
+                    </label>
+
+
+                    <label class="check_label">
+                        <input type="checkbox" name="check_manufacturer"> 250 g
+                    </label>
+
+
+                    <label class="check_label">
+                        <input type="checkbox" name="check_manufacturer3"> 500 g
+                    </label>
+
+
+                    <label class="check_label">
+                        <input type="checkbox" name="check_manufacturer4"> 1000 g
+                    </label>
+
+            </aside>
+
+
+
+
+        </div>
+        <%- include("../parts/footer") %>
+
     </body>
 </html>
