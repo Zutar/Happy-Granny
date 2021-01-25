@@ -1,6 +1,7 @@
 const express = require('express');
 const {Pool} = require('pg');
 const config = require('./config');
+const Parser = require('./app classes/Parser');
 
 
 const conectionString= `postgres://${config.db.user}:${config.db.password}@${config.db.host}:${config.db.port}/${config.db.dbName}`
@@ -22,8 +23,16 @@ client.connect((err) => {
         app.set('view engine', 'ejs');
         app.use('/', index);
         
+        const parser = new Parser(client);
+        parser.start();
+        
+        setTimeout(function tick(){
+            parser.start();
+            setTimeout(tick, confirm.parserTimer);
+        }, config.parserTimer);
+
         app.listen(config.port, config.host, () => {
             console.log(`Server running on: http://localhost:${config.port}`);
-        });
+        }); 
     }
 });
