@@ -12,15 +12,15 @@ h1{
     text-align: center;
 }
 
-.global{
-    margin-left:15%
+main{
+    max-width: 1280px;
 }
 .catalog{
+    width:150px;
     display: flex;
     padding: 10px;
     flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    width: 12%;
     margin-top: 10px;
 }
 
@@ -69,4 +69,11 @@ h1{
 }
 .check_label{
     padding:4px;
+}
+.goods{
+    display: flex;
+    justify-content: center;
+}
+.aside_menu{
+    float:left;
 }

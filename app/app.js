@@ -24,10 +24,10 @@ client.connect((err) => {
         app.use('/', index);
         
         const parser = new Parser(client);
-        parser.start();
+        // parser.start();
         
         setTimeout(function tick(){
-            parser.start();
+            // parser.start();
             setTimeout(tick, confirm.parserTimer);
         }, config.parserTimer);
 
