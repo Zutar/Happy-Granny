@@ -23,6 +23,12 @@
     padding-left: 2rem;
 }
 
+.chart {
+    height: 8rem;
+    width: 100%;
+    background-color: rgb(162, 162, 162);
+}
+
 .bestChoise-main {
     height: 100%;
 }
