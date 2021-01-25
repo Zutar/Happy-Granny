@@ -3,6 +3,7 @@ config.db = {}
 
 config.host = '0.0.0.0';
 config.port = process.env.PORT || 8080;
+config.parserTimer = 1000 * 60 * 60 * 1; // - - min hour (default every 1 hour)
 
 config.db.host = 'ec2-54-73-253-140.eu-west-1.compute.amazonaws.com';
 config.db.port = 5432;
