@@ -3,10 +3,8 @@ module.exports = (function(client){
     const path = require('path');
     const express = require('express');
     const bodyParser = require('body-parser');
-    const axios = require('axios');
-    const cheerio = require('cheerio');
-    const router = express.Router();
 
+    const router = express.Router();
 
     router.use('/static', express.static(path.join(__dirname + '/../static'))); // Set default static files path
     router.use(bodyParser.json({limit:'5mb'}));
@@ -19,5 +17,12 @@ module.exports = (function(client){
         res.render('./pages/index.ejs');
     });
     
+    router.get('/products', (req, res) => {
+        const query = `SELECT * FROM products WHERE wave = (SELECT MAX(wave) FROM products);`;
+        this.client.query(query, (error, result, fields) => {
+            res.send(result.rows);
+        });
+    });
+
     return router;
 });
