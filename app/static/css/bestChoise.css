@@ -1,0 +1,95 @@
+.bestChoise-header {
+    margin-top: 3rem;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 4rem;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #E52327;
+
+}
+
+.bestChoise-switcher {
+    /* background-color: red; */
+    /* height: 8rem; */
+    line-height: 2rem;
+}
+
+.bestChoise-switcher > .swither {
+    border: solid red 2px;
+    border-right: solid red 1rem;
+    margin-top: 1rem;
+    padding-left: 2rem;
+}
+
+.bestChoise-main {
+    height: 100%;
+}
+
+.bestChoise-main > div {
+    height: 100%;
+}
+
+.bestChoise-main > .description {
+    /* background-color: red; */
+    /* height: 100%; */
+}
+
+.bestChoise-main > .description > .cost {
+    line-height: 4rem;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.bestChoise-main > .description > .cost > .hrn {
+    color:red;
+    font-size: 3rem;
+}
+
+.bestChoise-main > .description > .cost > .coin {
+    color:red;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.bestChoise-main > .description > .cost > .weight {
+    margin-left: auto;
+}
+
+/* =========== */
+
+.bestChoise-main > .description > .m-bottom_0 > :first-child {
+    margin-bottom: 0;
+    line-height: 0.8rem;
+}
+
+
+.bestChoise-main > .description > .nazva-saller {
+    justify-content:space-between;
+    line-height: 0.8rem;
+}
+
+.bestChoise-main > .description > .nazva-saller > p {
+    margin-bottom: 0 !important;
+}
+
+.bestChoise-main > .description > .nazva-saller-names {
+    justify-content:space-between;
+    margin-bottom: 0;
+    line-height: 0.8rem;
+}
+
+/* ========= */
+
+.catalog-header-text > div {
+    width: 100%;
+    background-color: red;
+}
+
+/* FIRST SORT weight */
+.catalog-sort {
+    border: solid black 1px;
+    padding: 1rem;
+}
+/* END: FIRST SORT weight */

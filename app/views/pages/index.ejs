@@ -1,90 +1,125 @@
+
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="static/css/normalize.css">
-        <link rel="stylesheet" href="static/css/main.css">
-        <link rel="stylesheet" href="static/css/header.css">
-        <link rel="stylesheet" href="static/css/footer.css">
-    </head>
-    <body>
-        <%- include("../parts/header") %>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap 5 -->
+    <link href="static/libs/bootstrap5/css/bootstrap.min.css.map" rel="stylesheet"></link>
+    <link href="static/libs/bootstrap5/css/bootstrap.min.css" rel="stylesheet"></link>
 
+    <!-- Header -->
+    <link rel="stylesheet" href="static/css/header.css">
+    <!-- block best-choise -->
+    <link rel="stylesheet" href="static/css/bestChoise.css">
+</head>
+<body>
+    <header class="container-fluid">
+    </header>
 
-        <aside class="catalog_name">Каталог гречки</aside>
-        <div class="aside_menu">
-        <aside class="catalog">
+    <div class="container">
+        <div class="row">
+            <div class="bestChoise-header col-sm-12 d-flex justify-content-center">
+                Лучшее для Вас
+            </div>
 
-            <p class="category_name">Вес</p>
+            <div class="bestChoise-switcher col-md-4 col-sm-5 col-lg-3 align-items-center">
+                <div class="swither">
+                    Найныжча цина
+                </div>
+                <div class="swither">
+                    Краща цина/вага
+                </div>
+                <div class="swither">
+                    Найбыльша вага
+                </div>
 
-            <label class="check_label">
-                <input type="checkbox" name="check_weight1"> 100 g
-            </label>
+                <hr>
 
-            <label class="check_label">
-                <input type="checkbox" name="check_weight2"> 250 g
-            </label>
+                <div class="bestChoise-imgs d-flex ">
+                    <div class="">
+                        <img src="static/img/grechka.png" alt="" width="100%">
+                    </div>
+                    <div class="">
+                        <img src="static/img/grechka.png" alt="" width="100%">
+                    </div>
+                </div>
+            </div>
 
-            <label class="check_label">
-                <input type="checkbox" name="check_weight3"> 500 g
-            </label>
+            <div class="bestChoise-main col-sm-7 col-md-8 col-lg-9 d-flex align-items-center">
+                <div class="col-sm-5 col-md-6">
+                    <img src="static/img/grechka.png" alt="" width="100%">
+                </div>
+                <div class="description col-sm-7 col-md-6">
+                    <h4>Trapeza гречана з грибами</h4>
+                    <div class="cost d-flex">
+                        <p class="hrn">58</p>
+                        <p class="coin">99</p>
 
-            <label class="check_label">
-                <input type="checkbox" name="check_weight4"> 1000 g
-            </label>
+                        <p class="weight">
+                            800 г
+                        </p>
+                    </div>
 
-            </aside>
+                    <div class="m-bottom_0">
+                        <p>Виробник:</p>
+                        <p>Trapeza</p>
+                    </div>
 
-        <aside class="catalog">
+                    <div class="nazva-saller d-flex">
+                        <p>Nazva:   </p>
+                        <p>Saller:</p>
+                    </div>
 
-            <p class="category_name">Цена</p>
-
-            <label class="check_label">
-                <input type="checkbox" name="check_price1"> 100 g
-            </label>
-
-
-            <label class="check_label">
-                <input type="checkbox" name="check_price2"> 250 g
-            </label>
-
-
-            <label class="check_label">
-                <input type="checkbox" name="check_price3"> 500 g
-            </label>
-
-            <label class="check_label">
-                <input type="checkbox" name="check_price4"> 1000 g
-            </label>
-
-        </aside>
-
-        <aside class="catalog">
-
-            <p class="category_name">Производитель</p>
-
-            <label class="check_label">
-                <input type="checkbox" name="check_manufacturer1"> 100 g
-            </label>
-
-
-            <label class="check_label">
-                <input type="checkbox" name="check_manufacturer"> 250 g
-            </label>
-
-
-            <label class="check_label">
-                <input type="checkbox" name="check_manufacturer3"> 500 g
-            </label>
-
-
-            <label class="check_label">
-                <input type="checkbox" name="check_manufacturer4"> 1000 g
-            </label>
-
-        </aside>
+                    <div class="nazva-saller-names m-bottom_0 d-flex">
+                        <p>Гречна з грыбамы</p>
+                        <p>Silpo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-        <main class="goods">БЛА</main>
-        <%- include("../parts/footer") %>
-    </body>
+
+    <div class="container">
+        <div class="row">
+            <hr>
+
+            <div class="catalog-header-text col-sm-4">
+                <div class="">Каталог гречки</div>
+
+                <aside class="catalog-sort d-flex flex-column">
+
+                    <p class="category_name">Вага</p>
+        
+                    <label class="">
+                        <input type="checkbox" name="check_weight1"> 100 g
+                    </label>
+        
+                    <label class="">
+                        <input type="checkbox" name="check_weight2"> 250 g
+                    </label>
+        
+                    <label class="">
+                        <input type="checkbox" name="check_weight3"> 500 g
+                    </label>
+        
+                    <label class="">
+                        <input type="checkbox" name="check_weight4"> 1000 g
+                    </label>
+        
+                </aside>
+            </div>
+            
+            <div class="col-sm-8">
+                <div class="d-flex justify-content-between">
+                    <div class="sort">выд дешевых</div>
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
 </html>
