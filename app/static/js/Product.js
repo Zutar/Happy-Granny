@@ -16,12 +16,12 @@ class Product{
 
     sortResult(sort = ''){
         let result = null;
-        if(sort === '' || sort === 'price/weight'){
+        if(sort === '' || sort === 'best'){
             result = this.getBest();
         }else if(sort === 'lowerPrice'){
-
+            result = this.getLowerPrice();
         }else if(sort === 'biggestWeight'){
-
+            result = this.getBiggestWeight();
         }
         
         return result;
@@ -31,46 +31,51 @@ class Product{
         const gridWrpper = document.querySelector('.grid-wrpper');
         const bestChoiseMain = document.querySelector('.bestChoise-main');
         const priceArray = productsArray[0].price.toString().split('.');
+        const bestProduct = productsArray.shift();
 
         priceArray[1] = priceArray[1].length < 2 ? priceArray[1] + '0' : priceArray[1];
 
         bestChoiseMain.innerHTML = `
                 <div class="col-sm-5 col-md-6">
-                    <img class="product-img" src="${productsArray[0].image}" alt="" width="200px">
+                    <img class="product-img" src="${bestProduct.image}" alt="" width="200px">
                 </div>
                 <div class="description col-sm-7 col-md-6">
-                    <h4 class="product-title">${productsArray[0].name}</h4>
+                    <h4 class="product-title">${bestProduct.name}</h4>
                     <div class="cost d-flex">
                         <p class="hrn">${priceArray[0]}</p>
                         <p class="coin">${priceArray[1]}</p>
 
                         <p class="product-weight">
-                        ${productsArray[0].weight} г
+                        ${bestProduct.weight} г
                         </p>
                     </div>
                     <div class="nazva-saller d-flex">
-                        <p>Назва товару:   </p>
-                        <p>Продавець:</p>
+                        <p></p>
+                        <p>Магазин:</p>
                     </div>
                     <div class="nazva-saller-names m-bottom_0 d-flex">
-                        <p>Гречана з грибами</p>
-                        <p>${productsArray[0].shop_name}</p>
+                        <a href="${bestProduct.url}" target="_blank">Купити</a>
+                        <p>${bestProduct.shop_name}</p>
                     </div>
                 </div>`;
 
 
         let htmlElems = '';
-        const bestProduct = productsArray.shift();
 
         productsArray.forEach((product) => {
             if(product.weight !== 0 && product.price !== 0){
                 const priceArray = product.price.toString().split('.');
-                priceArray[1] = priceArray[1].length < 2 ? priceArray[1] + '0' : priceArray[1];
+                if(priceArray.length === 2){
+                    priceArray[1] = priceArray[1].length < 2 ? priceArray[1] + '0' : priceArray[1];
+                }else{
+                    priceArray[1] = "00";
+                }
                 htmlElems += `<div class="product">
-                <div class="icon">
-                    <img src="${product.image}" alt="">
-                </div>
-    
+                <a href="${product.url}" target="_blank">
+                    <div class="icon">
+                        <img src="${product.image}" alt="">
+                    </div>
+                </a>
                 <div class="product-title">${product.name}</div>
     
                 <div class="cost d-flex">
@@ -84,6 +89,7 @@ class Product{
             </div>`;
             }
         });
+
         gridWrpper.innerHTML = htmlElems;
         this.drawChart();
     }
@@ -112,7 +118,7 @@ class Product{
         data.forEach((item, index) => {
             result.push([new Date(item.timestamp), item.avg]);
         });
-        console.log(result);
+
         return result;
     }
 
@@ -129,6 +135,30 @@ class Product{
         resultArray.sort((a, b) => {
             if(a.pricePerGram < b.pricePerGram) return -1;
             if(a.pricePerGram > b.pricePerGram) return 1;
+            return 0;
+        });
+
+        return resultArray;
+    }
+
+    getLowerPrice(){
+        let resultArray = [...this.products];
+
+        resultArray.sort((a, b) => {
+            if(a.price < b.price) return -1;
+            if(a.price > b.price) return 1;
+            return 0;
+        });
+
+        return resultArray;
+    }
+
+    getBiggestWeight(){
+        let resultArray = [...this.products];
+
+        resultArray.sort((a, b) => {
+            if(a.weight < b.weight) return 1;
+            if(a.weight > b.weight) return -1;
             return 0;
         });
 
