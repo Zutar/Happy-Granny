@@ -63,9 +63,9 @@ class Product{
         productsArray.forEach((product) => {
             const priceArray = product.price.toString().split('.');
             priceArray[1] = priceArray[1].length < 2 ? priceArray[1] + '0' : priceArray[1];
-            htmlElems += `<div class="">
+            htmlElems += `<div class="product">
             <div class="icon">
-                <img src="${product.image}" alt="" width="150px">
+                <img src="${product.image}" alt="">
             </div>
 
             <div class="product-title">${product.name}</div>
