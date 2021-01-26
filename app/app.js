@@ -27,7 +27,7 @@ client.connect((err) => {
         parser.start();
         
         setTimeout(function tick(){
-            //parser.start();
+            parser.start();
             setTimeout(tick, config.parserTimer);
         }, config.parserTimer);
 

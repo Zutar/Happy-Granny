@@ -39,6 +39,18 @@
     font-weight: bold;
 }
 
+.swither{
+    cursor: pointer;
+}
+.swither:hover{
+    background-color: red;
+}
+
+.swither-active{
+    background-color: red;
+    color: white;
+}
+
 .chart {
     width: 100%;
     transition: .3s;
@@ -98,7 +110,6 @@
 
 .icon > img{
     object-fit: contain;
-    /* width: 200px; */
     height: 100%;
 }
 
@@ -110,11 +121,27 @@
 
 .bestChoise-main > .description > .nazva-saller {
     justify-content:space-between;
-    line-height: 0.8rem;
+    padding: 10px 0px;
+}
+
+.nazva-saller-names > a{
+    text-decoration: none;
+    color: white;
+    background-color: #e52327;
+    border: solid 2px #e52327;
+    padding: 10px 20px;
+    font-weight: 700;
+    border-radius: 15px;
+    transition: .3s;
+}
+.nazva-saller-names > a:hover{
+    background-color: white;
+    color: #e52327;
 }
 
 .bestChoise-main > .description > .nazva-saller > p {
     margin-bottom: 0 !important;
+    font-weight: 600;
 }
 
 .bestChoise-main > .description > .nazva-saller-names {
