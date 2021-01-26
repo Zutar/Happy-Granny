@@ -56,7 +56,7 @@
                 <div class="aside_menu">
                     <aside class="catalog">
         
-                        <p class="category_name">Вес</p>
+                        <p class="category_name">Вага</p>
         
                         <label class="check_label">
                             <input type="checkbox" name="check_weight1"> 100 g
@@ -78,7 +78,7 @@
         
                     <aside class="catalog">
         
-                        <p class="category_name">Цена</p>
+                        <p class="category_name">Ціна</p>
         
                         <label class="check_label">
                             <input type="checkbox" name="check_price1"> 100 g
@@ -102,7 +102,7 @@
         
                     <aside class="catalog">
         
-                        <p class="category_name">Производитель</p>
+                        <p class="category_name">Виробник</p>
         
                         <label class="check_label">
                             <input type="checkbox" name="check_manufacturer1"> 100 g
@@ -129,8 +129,22 @@
 
             <div class="col-sm-8">
                 <div class="d-flex justify-content-between">
-                    <div class="sort">выд дешевых</div>
-                    <input type="text">
+                    <div class="sort">список товаров</div>
+                    <form action="">
+                        <label for="choose_good" class="label_dropdown">Оберіть категорію:</label>
+                        <select name="choose_good" id="choose_good">
+                            <option value="love">Гречана крупа</option>
+                            <option value="">Морозиво</option>
+                            <option value="">Хлібці</option>
+                            <option value="">Ковбаса</option>
+                            <option value="">Бринза</option>
+                            <option value="">Мінеральна вода</option>
+                            <option value="">Жувальна гумка</option>
+                            <option value="">Цукерки</option>
+
+
+                        </select>
+                    </form>
                 </div>
 
                 <div class="grid-wrpper products-wrapper"></div>
