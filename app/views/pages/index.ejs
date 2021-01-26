@@ -3,9 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Happy-Granny</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="author" content="ITL_ONAT">
+    <meta name="description" content="Ми допоможемо підібрати найвигіднішу гречку для студентів і бабусь!">
+    <meta name="keywords" content="Гречка, греча, можно гречку?, много гречки, вложения в гречку">
+    <link href="static/css/main.css" rel="stylesheet"></link>
     <!-- Bootstrap 5 -->
     <link href="static/libs/bootstrap5/css/bootstrap.min.css.map" rel="stylesheet"></link>
     <link href="static/libs/bootstrap5/css/bootstrap.min.css" rel="stylesheet"></link>
@@ -16,9 +20,7 @@
     <link rel="stylesheet" href="static/css/bestChoise.css">
 </head>
 <body>
-    <header class="container-fluid">
-    </header>
-
+    <%- include('../parts/header') %>
     <div class="container">
         <div class="row">
             <div class="bestChoise-header col-sm-12 d-flex justify-content-center">
@@ -43,37 +45,7 @@
                 </div>
             </div>
 
-            <div class="bestChoise-main col-sm-7 col-md-8 col-lg-9 d-flex align-items-center">
-                <div class="col-sm-5 col-md-6">
-                    <img src="static/img/grechka.png" alt="" width="100%">
-                </div>
-                <div class="description col-sm-7 col-md-6">
-                    <h4>Trapeza гречана з грибами</h4>
-                    <div class="cost d-flex">
-                        <p class="hrn">58</p>
-                        <p class="coin">99</p>
-
-                        <p class="weight">
-                            800 г
-                        </p>
-                    </div>
-
-                    <div class="m-bottom_0">
-                        <p>Виробник:</p>
-                        <p>Trapeza</p>
-                    </div>
-
-                    <div class="nazva-saller d-flex">
-                        <p>Назва товару:   </p>
-                        <p>Продавець:</p>
-                    </div>
-
-                    <div class="nazva-saller-names m-bottom_0 d-flex">
-                        <p>Гречана з грибами</p>
-                        <p>Сільпо</p>
-                    </div>
-                </div>
-            </div>
+            <div class="bestChoise-main col-sm-7 col-md-8 col-lg-9 d-flex align-items-center"></div>
         </div>
     </div>
 
@@ -82,29 +54,79 @@
             <hr>
 
             <div class="catalog-header-text col-sm-4">
-                <div class="">Каталог гречки</div>
-
-                <aside class="catalog-sort d-flex flex-column">
-
-                    <p class="category_name">Вага</p>
-
-                    <label class="">
-                        <input type="checkbox" name="check_weight1"> 100 g
-                    </label>
-
-                    <label class="">
-                        <input type="checkbox" name="check_weight2"> 250 g
-                    </label>
-
-                    <label class="">
-                        <input type="checkbox" name="check_weight3"> 500 g
-                    </label>
-
-                    <label class="">
-                        <input type="checkbox" name="check_weight4"> 1000 g
-                    </label>
-
-                </aside>
+                <aside class="catalog_name">Каталог гречки</aside>
+                <div class="aside_menu">
+                    <aside class="catalog">
+        
+                        <p class="category_name">Вес</p>
+        
+                        <label class="check_label">
+                            <input type="checkbox" name="check_weight1"> 100 g
+                        </label>
+        
+                        <label class="check_label">
+                            <input type="checkbox" name="check_weight2"> 250 g
+                        </label>
+        
+                        <label class="check_label">
+                            <input type="checkbox" name="check_weight3"> 500 g
+                        </label>
+        
+                        <label class="check_label">
+                            <input type="checkbox" name="check_weight4"> 1000 g
+                        </label>
+        
+                        </aside>
+        
+                    <aside class="catalog">
+        
+                        <p class="category_name">Цена</p>
+        
+                        <label class="check_label">
+                            <input type="checkbox" name="check_price1"> 100 g
+                        </label>
+        
+        
+                        <label class="check_label">
+                            <input type="checkbox" name="check_price2"> 250 g
+                        </label>
+        
+        
+                        <label class="check_label">
+                            <input type="checkbox" name="check_price3"> 500 g
+                        </label>
+        
+                        <label class="check_label">
+                            <input type="checkbox" name="check_price4"> 1000 g
+                        </label>
+        
+                    </aside>
+        
+                    <aside class="catalog">
+        
+                        <p class="category_name">Производитель</p>
+        
+                        <label class="check_label">
+                            <input type="checkbox" name="check_manufacturer1"> 100 g
+                        </label>
+        
+        
+                        <label class="check_label">
+                            <input type="checkbox" name="check_manufacturer"> 250 g
+                        </label>
+        
+        
+                        <label class="check_label">
+                            <input type="checkbox" name="check_manufacturer3"> 500 g
+                        </label>
+        
+        
+                        <label class="check_label">
+                            <input type="checkbox" name="check_manufacturer4"> 1000 g
+                        </label>
+        
+                    </aside>
+                </div>
             </div>
 
             <div class="col-sm-8">
@@ -113,88 +135,12 @@
                     <input type="text">
                 </div>
 
-                
-                <div class="grid-wrpper">
-                    <div class="">
-                        <div class="icon">
-                            <img src="static/img/grechka.png" alt="" width="100%">
-                        </div>
-
-                        <div class="name">Trapeza grechana s gribami</div>
-
-                        <div class="cost d-flex">
-                            <p class="hrn">58</p>
-                            <p class="coin">99</p>
-    
-                            <p class="weight">
-                                800 г
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="">
-                        <div class="icon">
-                            <img src="static/img/grechka.png" alt="" width="100%">
-                        </div>
-
-                        <div class="name">Trapeza grechana s gribami</div>
-
-                        <div class="cost d-flex">
-                            <p class="hrn">58</p>
-                            <p class="coin">99</p>
-    
-                            <p class="weight">
-                                800 г
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="">
-                        <div class="icon">
-                            <img src="static/img/grechka.png" alt="" width="100%">
-                        </div>
-
-                        <div class="name">Trapeza grechana s gribami</div>
-
-                        <div class="cost d-flex">
-                            <p class="hrn">58</p>
-                            <p class="coin">99</p>
-    
-                            <p class="weight">
-                                800 г
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="">
-                        <div class="icon">
-                            <img src="static/img/grechka.png" alt="" width="100%">
-                        </div>
-
-                        <div class="name">Trapeza grechana s gribami</div>
-
-                        <div class="cost d-flex">
-                            <p class="hrn">58</p>
-                            <p class="coin">99</p>
-    
-                            <p class="weight">
-                                800 г
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <div class="grid-wrpper products-wrapper"></div>
             </div>
         </div>
     </div>
-
-    <footer class="container-fluid mt-auto">
-        <div class="container">
-            <div class="row align-items-center">
-                <p>©Copyright  ITL_ONAT</p>
-            </div>
-        </div>
-        
-    </footer>
-
+    <%- include('../parts/footer') %>
+    <script src="../../static/js/Product.js"></script>
+    <script src="../../static/js/main.js"></script>
 </body>
 </html>
