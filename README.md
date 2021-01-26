@@ -64,7 +64,7 @@
 
 АТБ https://zakaz.atbmarket.com/
 
-Сильпо https://shop.silpo.ua/home
+Обжора https://produkty24.com.ua/
 
 Таврия https://www.tavriav.ua/
 

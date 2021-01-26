@@ -45,7 +45,8 @@ main{
 /*    height: 15%;*/
 /*}*/
 .catalog_name{
-    width:80%;
+    text-align: center;
+    width:150px;
     padding:1%;
     margin-top: 1%;
     margin-bottom: 1%;
@@ -68,6 +69,7 @@ main{
     color: #E52327;
 }
 .check_label{
+
     padding:4px;
 }
 .goods{
@@ -76,4 +78,7 @@ main{
 }
 .aside_menu{
     float:left;
+}
+.label_dropdown{
+    font-weight: bold;
 }
