@@ -10,6 +10,7 @@
     <meta name="description" content="Ми допоможемо підібрати найвигіднішу гречку для студентів і бабусь!">
     <meta name="keywords" content="Гречка, греча, можно гречку?, много гречки, вложения в гречку">
     <link href="static/css/main.css" rel="stylesheet"></link>
+    <link rel="icon" href="static/images/icon.png" type="image/png">
     <!-- Bootstrap 5 -->
     <link href="static/libs/bootstrap5/css/bootstrap.min.css.map" rel="stylesheet"></link>
     <link href="static/libs/bootstrap5/css/bootstrap.min.css" rel="stylesheet"></link>
@@ -54,24 +55,17 @@
             <div class="catalog-header-text col-sm-4">
                 <aside class="catalog_name">Каталог</aside>
                 <div class="aside_menu">
-                    <aside class="catalog">
+                    <aside class="catalog catalog-weight">
         
                         <p class="category_name">Вага</p>
         
                         <label class="check_label">
-                            <input type="checkbox" name="check_weight1" value="100"> 100 g
+                            100 g
+                            <input type="number" name="check_weight1" value="100">
                         </label>
         
                         <label class="check_label">
                             <input type="checkbox" name="check_weight2" value="250"> 250 g
-                        </label>
-        
-                        <label class="check_label">
-                            <input type="checkbox" name="check_weight3" value="500"> 500 g
-                        </label>
-        
-                        <label class="check_label">
-                            <input type="checkbox" name="check_weight4" value="1000"> 1000 g
                         </label>
 
                     </aside>
@@ -100,18 +94,14 @@
                     <form action="">
                         <label for="choose_good" class="label_dropdown">Оберіть категорію:</label>
                         <select name="choose_good" id="choose_good">
-                            <option value="1">Гречана крупа</option>
-                            <option value="2">Чіпси</option>
-                            <option value="3">Пряники</option>
-                            <option value="4">Морозиво</option>
-                            <option value="5">Хлібці</option>
-                            <option value="6">Ковбаса</option>
-                            <option value="7">Бринза</option>
-                            <option value="8">Мінеральна вода</option>
-                            <option value="9">Жувальна гумка</option>
-                            <option value="10">Цукерки</option>
-
-
+                            <option value="love">Гречана крупа</option>
+                            <option value="">Морозиво</option>
+                            <option value="">Хлібці</option>
+                            <option value="">Ковбаса</option>
+                            <option value="">Бринза</option>
+                            <option value="">Мінеральна вода</option>
+                            <option value="">Жувальна гумка</option>
+                            <option value="">Цукерки</option>
                         </select>
                     </form>
                 </div>

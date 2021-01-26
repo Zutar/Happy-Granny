@@ -15,7 +15,7 @@ window.onload = () => {
         switherArr.forEach((item) => {
             item.classList.remove('swither-active');
         });
-        activeElem.classList.add('swither-active');
+        if(!activeElem.classList.contains('bestChoise-switcher')) activeElem.classList.add('swither-active');
 
         const productsArray = product.sortResult(activeElem.dataset.sort);
         product.displayResult(productsArray);
