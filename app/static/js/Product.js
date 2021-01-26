@@ -1,6 +1,7 @@
 class Product{
     constructor(){
         this.products = [];
+        this.chart = [];
     }
     
     getProductsFromSerser(){
@@ -30,6 +31,7 @@ class Product{
         const gridWrpper = document.querySelector('.grid-wrpper');
         const bestChoiseMain = document.querySelector('.bestChoise-main');
         const priceArray = productsArray[0].price.toString().split('.');
+
         priceArray[1] = priceArray[1].length < 2 ? priceArray[1] + '0' : priceArray[1];
 
         bestChoiseMain.innerHTML = `
@@ -61,26 +63,57 @@ class Product{
         const bestProduct = productsArray.shift();
 
         productsArray.forEach((product) => {
-            const priceArray = product.price.toString().split('.');
-            priceArray[1] = priceArray[1].length < 2 ? priceArray[1] + '0' : priceArray[1];
-            htmlElems += `<div class="product">
-            <div class="icon">
-                <img src="${product.image}" alt="">
-            </div>
-
-            <div class="product-title">${product.name}</div>
-
-            <div class="cost d-flex">
-                <p class="hrn">${priceArray[0]}</p>
-                <p class="coin">${priceArray[1]}</p>
-
-                <p class="product-weight">
-                    ${product.weight} г
-                </p>
-            </div>
-        </div>`;
+            if(product.weight !== 0 && product.price !== 0){
+                const priceArray = product.price.toString().split('.');
+                priceArray[1] = priceArray[1].length < 2 ? priceArray[1] + '0' : priceArray[1];
+                htmlElems += `<div class="product">
+                <div class="icon">
+                    <img src="${product.image}" alt="">
+                </div>
+    
+                <div class="product-title">${product.name}</div>
+    
+                <div class="cost d-flex">
+                    <p class="hrn">${priceArray[0]}</p>
+                    <p class="coin">${priceArray[1]}</p>
+    
+                    <p class="product-weight">
+                        ${product.weight} г
+                    </p>
+                </div>
+            </div>`;
+            }
         });
         gridWrpper.innerHTML = htmlElems;
+        this.drawChart();
+    }
+
+    drawChart(type='benefit'){
+        google.charts.load('current', {packages: ['corechart', 'line']});
+        google.charts.setOnLoadCallback(() => {
+            let chartData = this.prepareChartData(this.chart);
+            if(type === 'benefit'){
+                let data = new google.visualization.DataTable();
+                data.addColumn('date', 'Date');
+                data.addColumn('number', 'Price');
+                data.addRows(chartData);
+            
+                var chart = new google.visualization.ScatterChart(document.getElementById('price-chart'));
+                chart.draw(data, {title: 'Графік ціни за грам',
+                vAxis: {title: "Ціна", titleTextStyle: {color: "green"}},
+                hAxis: {title: "Час", titleTextStyle: {color: "green"}},
+                lineWidth: 1, backgroundColor: 'transparent'});
+            }
+        });
+    }
+
+    prepareChartData(data){
+        let result = [];
+        data.forEach((item, index) => {
+            result.push([new Date(item.timestamp), item.avg]);
+        });
+        console.log(result);
+        return result;
     }
 
     getBest(){
@@ -106,7 +139,7 @@ class Product{
         return new Promise((resolve, reject) => {
             this.getProductsFromSerser().then(result => {
                 this.products = result.data;
-
+                this.chart = result.chart;
                 if(this.products.length > 0){
                     resolve();
                 }else{
