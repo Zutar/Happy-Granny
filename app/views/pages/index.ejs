@@ -29,7 +29,7 @@
 
             <div class="bestChoise-switcher col-md-4 col-sm-5 col-lg-3 align-items-center">
                 <div class="swither to-btn" data-sort="lowerPrice">
-                    Найнижча цина
+                    Найнижча ціна
                 </div>
                 <div class="swither swither-active to-btn" data-sort="best">
                     Краща ціна/вага
@@ -72,24 +72,16 @@
                     <aside class="catalog">
         
                         <p class="category_name">Ціна</p>
-        
-                        <label class="check_label">
-                            <input type="checkbox" name="check_price1"> 100 g
-                        </label>
-        
-        
-                        <label class="check_label">
-                            <input type="checkbox" name="check_price2"> 250 g
-                        </label>
-        
-        
-                        <label class="check_label">
-                            <input type="checkbox" name="check_price3"> 500 g
-                        </label>
-        
-                        <label class="check_label">
-                            <input type="checkbox" name="check_price4"> 1000 g
-                        </label>
+
+                        <form action="">
+                            <label class="price_label" for="min_price">Мінімальна: </label>
+                            <input class="dropdown_input" type="number" value="" id="min_price" name="min_price"><br><br>
+                            <label class="price_label" for="max_price">Максимальна:</label>
+                            <input class="dropdown_input" type="number" id="max_price" name="max_price"><br><br>
+                            <input type="submit" value="Шукати">
+                        </form>
+
+
         
                     </aside>
                 </div>
