@@ -18,7 +18,7 @@ module.exports = (function(client){
     });
     
     router.get('/products', (req, res) => {
-        const query = `SELECT p.id, p.name, p.price, p.weight, p.timestamp, p.image, s.url, s.search_url, s.name shop_name FROM products p JOIN shop s ON p.shopId=s.id WHERE wave = (SELECT MAX(wave) FROM products);`;
+        const query = `SELECT p.id, p.name, p.price, p.weight, p.timestamp, p.image, s.url, s.search_url, s.name shop_name, p.url FROM products p JOIN shop s ON p.shopId=s.id WHERE wave = (SELECT MAX(wave) FROM products);`;
         const chart_query = `SELECT AVG(price/weight), wave, timestamp FROM products WHERE weight != 0 AND price != 0 GROUP BY wave, timestamp ORDER BY wave;`;
         client.query(query, (error, result, fields) => {
             client.query(chart_query, (e, r, f) => {

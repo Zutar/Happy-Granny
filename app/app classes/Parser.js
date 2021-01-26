@@ -43,7 +43,7 @@ class Parser{
         }else if(url.indexOf('produkty24') !== - 1){
             productsArray = this.parseObjora();
         }
-        console.log(productsArray);
+        console.log(productsArray.length, url);
         this.saveData(productsArray, keyWords);
     }
 
@@ -68,6 +68,7 @@ class Parser{
         const price = document.querySelectorAll('.product__price');
         const title = document.querySelectorAll('.product__title > a');
         const image = document.querySelectorAll('.product__image img');
+        const url = document.querySelectorAll('.product__image > a');
 
         let productArray = [];
         for(let i = 0; i < price.length; i++){
@@ -75,6 +76,7 @@ class Parser{
             product.price = parseFloat(price[i].textContent);
             product.title = title[i].textContent;
             product.image = image[i].src;
+            product.url = url[i].href;
             product.weight = 0;
             // Split title for find product weight
             const titleSegments = product.title.split(' ');
@@ -97,7 +99,7 @@ class Parser{
         let price = document.querySelectorAll('.price');
         const title = document.querySelectorAll('.product-detail.text-center div');
         const image = document.querySelectorAll('.img-fluid.bg-img');
-
+        const url = document.querySelectorAll('.front a');
         let productArray = [];
         for(let i = 0; i < price.length; i++){
             const product = {}
@@ -105,6 +107,7 @@ class Parser{
             product.price = parseInt(product.price[0]) + parseFloat('0.' + parseInt(product.price[1]));
             product.title = title[i].textContent;
             product.image = image[i].src;
+            product.url = url[i].href;
             product.weight = 0;
             // Split title for find product weight
             const titleSegments = product.title.split(' ');
@@ -124,16 +127,19 @@ class Parser{
     parseObjora(){
         const document = this.document;
         let priceVal = document.querySelectorAll('.val');
-        let priceCents = document.querySelectorAll('.cents');
+        let priceCents = document.querySelectorAll('.price .cents');
         const title = document.querySelectorAll('.products .header');
         const image = document.querySelectorAll('.photo');
-
+        const url = document.querySelectorAll('.item .inner');
+        
         let productArray = [];
         for(let i = 0; i < title.length; i++){
+            console.log(priceVal.length, priceCents[i].textContent, url[i].href);
             const product = {}
             product.price = parseInt(priceVal[i].textContent) + parseFloat('0.' + priceCents[i].textContent);
             product.title = title[i].textContent;
             product.image = image[i].src;
+            product.url = url[i].href;
             product.weight = 0;
             // Split title for find product weight
             const titleSegments = product.title.split(' ');
@@ -155,10 +161,9 @@ class Parser{
         let query = 'INSERT INTO products VALUES ';
         for(let i = 0; i < productsArray.length; i++){
             const product = productsArray[i];
-            query += `(DEFAULT, '${product.title}', ${keyWords.shopid}, ${keyWords.categoryid}, ${product.price}, ${product.weight}, '', '', ${this.wave}, DEFAULT, '${product.image}'), `;
+            query += `(DEFAULT, '${product.title}', ${keyWords.shopid}, ${keyWords.categoryid}, ${product.price}, ${product.weight}, '', '', ${this.wave}, DEFAULT, '${product.image}', '${product.url}'), `;
         }
         query = query.slice(0, -2) + ';';
-
         this.client.query(query, (error, result, fields) => {
             
         });

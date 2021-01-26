@@ -3,12 +3,21 @@ window.onload = () => {
 
     product.start().then(() => {
         const productsArray = product.sortResult();
-        console.log(productsArray);
         product.displayResult(productsArray);
+        console.log(productsArray);
     });
 
     const bestChoiseSwitcher = document.querySelector('.bestChoise-switcher');
+    const switherArr = document.querySelectorAll('.swither');
+
     bestChoiseSwitcher.onclick = (event) => {
-        console.log(event.target);
+        const activeElem = event.target;
+        switherArr.forEach((item) => {
+            item.classList.remove('swither-active');
+        });
+        activeElem.classList.add('swither-active');
+
+        const productsArray = product.sortResult(activeElem.dataset.sort);
+        product.displayResult(productsArray);
     }
 }
