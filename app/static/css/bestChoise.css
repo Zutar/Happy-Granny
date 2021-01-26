@@ -40,9 +40,11 @@
 }
 
 .chart {
-    height: 8rem;
     width: 100%;
-    background-color: rgb(162, 162, 162);
+    transition: .3s;
+}
+.chart:hover{
+    transform: scale(1.3);
 }
 
 .bestChoise-main {
