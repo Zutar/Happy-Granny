@@ -11,8 +11,6 @@
 }
 
 .bestChoise-switcher {
-    /* background-color: red; */
-    /* height: 8rem; */
     line-height: 2rem;
 }
 
@@ -37,11 +35,6 @@
     height: 100%;
 }
 
-.bestChoise-main > .description {
-    /* background-color: red; */
-    /* height: 100%; */
-}
-
 .bestChoise-main > .description > .cost {
     line-height: 4rem;
     font-style: normal;
@@ -59,11 +52,9 @@
     line-height: 1.5rem;
 }
 
-.bestChoise-main > .description > .cost > .weight {
+.bestChoise-main > .description > .cost > .product-weight {
     margin-left: auto;
 }
-
-/* =========== */
 
 .bestChoise-main > .description > .m-bottom_0 > :first-child {
     margin-bottom: 0;
@@ -85,8 +76,6 @@
     margin-bottom: 0;
     line-height: 0.8rem;
 }
-
-/* ========= */
 
 .catalog-header-text > div {
     width: 100%;
@@ -132,7 +121,7 @@
     font-weight: bold;
 }
 
-.grid-wrpper > div > .cost > .weight {
+.grid-wrpper > div > .cost > .product-weight {
     font-size: .8rem;
     line-height: 2rem;
     margin-bottom: 0;
@@ -151,4 +140,5 @@ footer > .container > .row {
 
 footer > .container > .row > p {
     line-height: 4rem;
+    color: white;
 }

@@ -18,9 +18,13 @@ module.exports = (function(client){
     });
     
     router.get('/products', (req, res) => {
-        const query = `SELECT * FROM products WHERE wave = (SELECT MAX(wave) FROM products);`;
-        this.client.query(query, (error, result, fields) => {
-            res.send(result.rows);
+        const query = `SELECT p.id, p.name, p.price, p.weight, p.timestamp, p.image, s.url, s.search_url, s.name shop_name FROM products p JOIN shop s ON p.shopId=s.id WHERE wave = (SELECT MAX(wave) FROM products);`;
+        client.query(query, (error, result, fields) => {
+            if(result.rows){
+                res.send({status: true, data: result.rows});
+            }else{
+                res.send({status: false, data: result.rows});
+            }
         });
     });
 

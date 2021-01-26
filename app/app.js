@@ -24,11 +24,11 @@ client.connect((err) => {
         app.use('/', index);
         
         const parser = new Parser(client);
-        //parser.start();
+        parser.start();
         
         setTimeout(function tick(){
             //parser.start();
-            setTimeout(tick, confirm.parserTimer);
+            setTimeout(tick, config.parserTimer);
         }, config.parserTimer);
 
         app.listen(config.port, config.host, () => {
