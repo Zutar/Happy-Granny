@@ -1,11 +1,7 @@
 header{
-    color: #ff0000;
+    background-color: #E52327;
+    height: 1rem;
+    
     font-family:Montserrat;
     font-weight: bold;
-}
-.start_line{
-    background-color:#ff0000;
-    width:100%;
-
-    padding-top: 1%;
 }
