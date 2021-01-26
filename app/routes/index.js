@@ -19,12 +19,15 @@ module.exports = (function(client){
     
     router.get('/products', (req, res) => {
         const query = `SELECT p.id, p.name, p.price, p.weight, p.timestamp, p.image, s.url, s.search_url, s.name shop_name FROM products p JOIN shop s ON p.shopId=s.id WHERE wave = (SELECT MAX(wave) FROM products);`;
+        const chart_query = `SELECT AVG(price/weight), wave, timestamp FROM products WHERE weight != 0 AND price != 0 GROUP BY wave, timestamp ORDER BY wave;`;
         client.query(query, (error, result, fields) => {
-            if(result.rows){
-                res.send({status: true, data: result.rows});
-            }else{
-                res.send({status: false, data: result.rows});
-            }
+            client.query(chart_query, (e, r, f) => {
+                if(result.rows){
+                    res.send({status: true, data: result.rows, chart: r.rows});
+                }else{
+                    res.send({status: false, data: result.rows, chart: r.rows});
+                }
+            });
         });
     });
 
