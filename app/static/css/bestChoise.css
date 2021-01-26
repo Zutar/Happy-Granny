@@ -14,11 +14,29 @@
     line-height: 2rem;
 }
 
+.to-btn {
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+.to-btn:hover {
+    background: red;
+    color: blanchedalmond;
+    transition: .5s;
+    border-right: solid rgb(255, 255, 255) 0rem;
+}
+
 .bestChoise-switcher > .swither {
     border: solid red 2px;
     border-right: solid red 1rem;
     margin-top: 1rem;
     padding-left: 2rem;
+    font-weight: bold;
 }
 
 .chart {
@@ -70,10 +88,16 @@
     transform: scale(1.05);
 }
 
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .icon > img{
     object-fit: contain;
-    width: 200px;
-    height: 200px;
+    /* width: 200px; */
+    height: 100%;
 }
 
 .bestChoise-main > .description > .m-bottom_0 > :first-child {
@@ -130,9 +154,18 @@
 .product{
     cursor: pointer;
     transition: .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .product:hover{
     transform: scale(1.02);
+}
+
+.product-title {
+    /* align-self: flex-end; */
+    margin-top: auto;
+    /* justify-self: end; */
 }
 
 .grid-wrpper > div > .cost > .hrn {
@@ -141,6 +174,7 @@
     margin-bottom: 0;
     color:red;
     font-weight: bold;
+    margin-left: 1rem;
 }
 
 .grid-wrpper > div > .cost > .coin {
@@ -157,6 +191,7 @@
     margin-bottom: 0;
     font-weight: bold;
     margin-left: auto;
+    margin-right: 1rem;
 }
 
 footer {
