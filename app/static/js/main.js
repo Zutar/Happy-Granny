@@ -6,4 +6,9 @@ window.onload = () => {
         console.log(productsArray);
         product.displayResult(productsArray);
     });
+
+    const bestChoiseSwitcher = document.querySelector('.bestChoise-switcher');
+    bestChoiseSwitcher.onclick = (event) => {
+        console.log(event.target);
+    }
 }

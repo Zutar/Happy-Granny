@@ -39,6 +39,18 @@
     font-weight: bold;
 }
 
+.swither{
+    cursor: pointer;
+}
+.swither:hover{
+    background-color: red;
+}
+
+.swither-active{
+    background-color: red;
+    color: white;
+}
+
 .chart {
     width: 100%;
     transition: .3s;
