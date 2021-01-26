@@ -79,3 +79,6 @@ main{
 .aside_menu{
     float:left;
 }
+.label_dropdown{
+    font-weight: bold;
+}
